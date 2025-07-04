@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Class 8 PT-1 Generator</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    #quiz div { margin-bottom: 10px; }
+    button {
+      margin: 10px 0;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #45a049; }
+    select { margin-right: 10px; padding: 5px; }
+  </style>
+</head>
+<body>
+
+  <h1>Class 8 PT - 1 Questions Generator</h1>
+
+  <label for="subject">Choose Subject:</label>
+  <select id="subject">
+    <option value="Science">Science</option>
+    <option value="Maths">Maths</option>
+    <option value="SST">SST</option>
+  </select>
+
+  <button onclick="displayQuiz(15)">Generate Quiz</button>
+
+  <div id="quiz"></div>
+
+  <script>
+    const questionBank = {
+Science: [
+  "What is the function of Cell Wall?",
+  "Define the following- a) Endoplasmic Reticulum b) Plastids c) Mitochondrion",
+  "Why Lysosomes are known as suicide bags?",
+  "Why is Mitochondrion known as the powerhouse of the cell?",
+  "What is the difference between unicellular and multicellular organisms?",
+  "Draw a labelled diagram of a plant cell and an animal cell.",
+  "What is the function of the nucleus in a cell?",
+  "What are the main differences between plant and animal cells?",
+  "What are tissues? Give examples",
+  "Who discovered the cell and how?",
+  "What is cytoplasm and what is its function?",
+  "Why is the cell called the structural and functional unit of life?",
+  "What are the basic practices of crop production?",
+  "What is irrigation? Name different methods of irrigation.",
+  "What is the difference between manure and fertilizers?",
+  "Why is crop rotation important?",
+  "What is weeding and why is it necessary?",
+  "What are the advantages of using modern agricultural tools?",
+  "How are grains stored on a large scale?",
+  "What are Kharif and Rabi crops? Give examples.",
+  "What are synthetic fibres? Name some examples.",
+  "How are synthetic fibres different from natural fibres?",
+  "Describe the characteristics of nylon and polyester.",
+  "What are the uses of rayon?",
+  "Why are synthetic fibres more popular than natural fibres?",
+  "What are the disadvantages of synthetic fibres?",
+  "What is meant by the term 'polymer'?",
+  "Why should we not wear synthetic clothes while working in the kitchen?",
+  "What is force? Give its SI unit.",
+  "What are contact and non-contact forces? Give examples.",
+  "What is friction? How can it be reduced?",
+  "How does force change the state of motion of an object?",
+  "What is pressure? How is it related to force?",
+  "Explain why the shape of an object affects the pressure it exerts.",
+  "What is atmospheric pressure?",
+  "Why do nails have pointed tips?",
+"Why should farmers not overuse fertilizers? What impact does it have on soil and water?",
+"Why is it important to wash fruits and vegetables before eating, especially when pesticides are used?",
+"How does pressure help a syringe to work? Explain with daily life use.",
+"Why does a camel walk easily on sand while a man finds it difficult?",
+"Why do astronauts wear pressurized suits in space?",
+"Why are plastic containers used for storing chemicals in labs?",
+"A balloon bursts when pricked with a pin. Explain this using the concept of pressure.",
+"Why are farmers advised to rotate crops like pulses and cereals in their fields?",
+"Why is the cell membrane called selectively permeable?",
+"In what situations in daily life do we use friction beneficially, and when do we try to reduce it?"
+
+],
+
+Maths: [
+  "What is a rational number? Give two examples.",
+  "Find the multiplicative inverse of -7/9.",
+  "Simplify: (-2/3) + (4/5) - (1/2).",
+  "State the properties of rational numbers under addition and multiplication.",
+  "Why is division by zero not defined in rational numbers?",
+  "Compare: -5/6 and -2/3.",
+  "Arrange the rational numbers 1/2, -3/4, 5/6 in ascending order.",
+  "Represent -3/4 on a number line.",
+  "Solve: 2x + 3 = 15.",
+  "If 3x - 7 = 2, find the value of x.",
+  "Solve the equation: 5(x - 2) = 3x + 4.",
+  "Form a linear equation from: 'Twice a number increased by 3 is 11'.",
+  "If 2x - 4 = 10, what is the value of x?",
+  "How do you verify a solution of a linear equation?",
+  "What is the difference between an expression and an equation?",
+  "Find the square of 23.",
+  "Find the square root of 121 using prime factorisation.",
+  "Which of the following are perfect squares: 144, 150, 169?",
+  "Explain how to find the square root by division method.",
+  "How many digits can a perfect square end with? Explain.",
+  "State the properties of square numbers.",
+  "Find the number whose square is 625.",
+  "Find the cube of 4.",
+  "Find the cube root of 216.",
+  "Is 243 a perfect cube? Explain.",
+  "List all cube numbers between 1 and 1000.",
+  "What is the unit digit of the cube of 12?",
+"How can we find cube root using prime factorisation?",
+  "The sum of a two-digit number and the number obtained by reversing its digits is 121. Find the number if its unit place digit is 5.",
+  "Which smallest number must be multiplied to 72 to make it a perfect cube?",
+"The length of the rectangle is increased by 40% and its breadth is decreased by 40%, what will be the percentage change in its perimeter?",
+"A fruit seller buys some oranges at the rate of ₹ 5 per orange. He also buys an equal number of bananas at the rate of ₹ 2 per banana. He makes a profit of 20% on oranges and a profit of 15% on bananas. In the end, he sold all the fruits. If he earned a profit of ₹ 390, find the number of oranges.",
+"A steamer goes downstream from one point to another in 7 hours. It covers the same distance upstream in 8 hours. If the speed of stream be 2 km/h, find the speed of the steamer in still water and the distance between the ports.",
+"Let O, P and Z represent the numbers 0, 3 and -5 respectively on the number line. Points Q, R and S are between O and P such that OQ = QR = RS = SP. What are the rational numbers represented by the points Q, R and S. Next choose a point T between Z and 0 so that ZT = TO. Which rational number does T represent?",
+"Rajni had a certain amount of money in her purse. She spent ₹ 10 1/4 in the school canteen, bought a gift worth ₹ 25 3/4 and gave ₹ 16 1/2 to her friend. How much she have to begin with?",
+"One-third of a group of people are men. If the number of women is 200 more than the men, find the total number of people",
+"Find the square roots of the following decimal numbers (i) 1056.25 (ii) 10020.01"
+],
+
+
+      SST: [
+       "Sorry For Inconvince, no questions added still"
+      
+      ]
+    };
+
+    function displayQuiz(maxQuestions) {
+      const subject = document.getElementById("subject").value;
+      const quizDiv = document.getElementById("quiz");
+      quizDiv.innerHTML = "";
+
+      const questions = [...questionBank[subject]];
+      const shuffled = questions.sort(() => 0.5 - Math.random());
+
+      for (let i = 0; i < maxQuestions && i < shuffled.length; i++) {
+        const questionDiv = document.createElement("div");
+        questionDiv.innerHTML = `<strong>Q${i + 1}:</strong> ${shuffled[i]}`;
+        quizDiv.appendChild(questionDiv);
+      }
+    }
+  </script>
+
+</body>
+</html>
+
