@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Class 8 PT-1 Generator</title>
+  <title>Class 8 Sample Question Paper Generator</title>
   <style>
     body { font-family: Arial, sans-serif; padding: 20px; }
     #quiz div { margin-bottom: 10px; }
+    h2 { margin-top: 30px; color: #2a2a2a; }
     button {
       margin: 10px 0;
       padding: 10px 20px;
@@ -20,134 +21,109 @@
 </head>
 <body>
 
-  <h1>Class 8 PT - 1 Questions Generator</h1>
+  <h1>Class 8 Sample Question Paper Generator</h1>
 
   <label for="subject">Choose Subject:</label>
   <select id="subject">
     <option value="Science">Science</option>
     <option value="Maths">Maths</option>
-    <option value="SST">SST</option>
   </select>
 
-  <button onclick="displayQuiz(15)">Generate Quiz</button>
+  <button onclick="generatePaper()">Generate Paper</button>
 
   <div id="quiz"></div>
 
   <script>
     const questionBank = {
-Science: [
-  "What is the function of Cell Wall?",
-  "Define the following- a) Endoplasmic Reticulum b) Plastids c) Mitochondrion",
-  "Why Lysosomes are known as suicide bags?",
-  "Why is Mitochondrion known as the powerhouse of the cell?",
-  "What is the difference between unicellular and multicellular organisms?",
-  "Draw a labelled diagram of a plant cell and an animal cell.",
-  "What is the function of the nucleus in a cell?",
-  "What are the main differences between plant and animal cells?",
-  "What are tissues? Give examples",
-  "Who discovered the cell and how?",
-  "What is cytoplasm and what is its function?",
-  "Why is the cell called the structural and functional unit of life?",
-  "What are the basic practices of crop production?",
-  "What is irrigation? Name different methods of irrigation.",
-  "What is the difference between manure and fertilizers?",
-  "Why is crop rotation important?",
-  "What is weeding and why is it necessary?",
-  "What are the advantages of using modern agricultural tools?",
-  "How are grains stored on a large scale?",
-  "What are Kharif and Rabi crops? Give examples.",
-  "What are synthetic fibres? Name some examples.",
-  "How are synthetic fibres different from natural fibres?",
-  "Describe the characteristics of nylon and polyester.",
-  "What are the uses of rayon?",
-  "Why are synthetic fibres more popular than natural fibres?",
-  "What are the disadvantages of synthetic fibres?",
-  "What is meant by the term 'polymer'?",
-  "Why should we not wear synthetic clothes while working in the kitchen?",
-  "What is force? Give its SI unit.",
-  "What are contact and non-contact forces? Give examples.",
-  "What is friction? How can it be reduced?",
-  "How does force change the state of motion of an object?",
-  "What is pressure? How is it related to force?",
-  "Explain why the shape of an object affects the pressure it exerts.",
-  "What is atmospheric pressure?",
-  "Why do nails have pointed tips?",
-"Why should farmers not overuse fertilizers? What impact does it have on soil and water?",
-"Why is it important to wash fruits and vegetables before eating, especially when pesticides are used?",
-"How does pressure help a syringe to work? Explain with daily life use.",
-"Why does a camel walk easily on sand while a man finds it difficult?",
-"Why do astronauts wear pressurized suits in space?",
-"Why are plastic containers used for storing chemicals in labs?",
-"A balloon bursts when pricked with a pin. Explain this using the concept of pressure.",
-"Why are farmers advised to rotate crops like pulses and cereals in their fields?",
-"Why is the cell membrane called selectively permeable?",
-"In what situations in daily life do we use friction beneficially, and when do we try to reduce it?"
+      Science: [
+        { text: "What is the function of Cell Wall?", marks: 1 },
+        { text: "Name two non-contact forces.", marks: 1 },
+        { text: "Why are synthetic fibres popular?", marks: 1 },
+        { text: "State one use of lysosomes.", marks: 1 },
+        { text: "What is cytoplasm?", marks: 1 },
+        { text: "Define a polymer.", marks: 1 },
+        { text: "Name the SI unit of force.", marks: 1 },
+        { text: "What is pressure?", marks: 1 },
+        { text: "Why do nails have pointed tips?", marks: 1 },
+        { text: "Why should we wash vegetables before eating?", marks: 1 },
 
-],
+        { text: "Explain friction and give one example.", marks: 2 },
+        { text: "Why is crop rotation useful?", marks: 2 },
+        { text: "Describe the function of mitochondria.", marks: 2 },
+        { text: "How does pressure affect syringes?", marks: 2 },
+        { text: "What is the role of the nucleus in a cell?", marks: 2 },
+        { text: "Why is the cell membrane selectively permeable?", marks: 2 },
+        { text: "How can friction be reduced?", marks: 2 },
+        { text: "Compare contact and non-contact forces.", marks: 2 },
+        { text: "What is irrigation? Name any two methods.", marks: 2 },
+        { text: "State two advantages of modern farming tools.", marks: 2 },
 
-Maths: [
-  "What is a rational number? Give two examples.",
-  "Find the multiplicative inverse of -7/9.",
-  "Simplify: (-2/3) + (4/5) - (1/2).",
-  "State the properties of rational numbers under addition and multiplication.",
-  "Why is division by zero not defined in rational numbers?",
-  "Compare: -5/6 and -2/3.",
-  "Arrange the rational numbers 1/2, -3/4, 5/6 in ascending order.",
-  "Represent -3/4 on a number line.",
-  "Solve: 2x + 3 = 15.",
-  "If 3x - 7 = 2, find the value of x.",
-  "Solve the equation: 5(x - 2) = 3x + 4.",
-  "Form a linear equation from: 'Twice a number increased by 3 is 11'.",
-  "If 2x - 4 = 10, what is the value of x?",
-  "How do you verify a solution of a linear equation?",
-  "What is the difference between an expression and an equation?",
-  "Find the square of 23.",
-  "Find the square root of 121 using prime factorisation.",
-  "Which of the following are perfect squares: 144, 150, 169?",
-  "Explain how to find the square root by division method.",
-  "How many digits can a perfect square end with? Explain.",
-  "State the properties of square numbers.",
-  "Find the number whose square is 625.",
-  "Find the cube of 4.",
-  "Find the cube root of 216.",
-  "Is 243 a perfect cube? Explain.",
-  "List all cube numbers between 1 and 1000.",
-  "What is the unit digit of the cube of 12?",
-"How can we find cube root using prime factorisation?",
-  "The sum of a two-digit number and the number obtained by reversing its digits is 121. Find the number if its unit place digit is 5.",
-  "Which smallest number must be multiplied to 72 to make it a perfect cube?",
-"The length of the rectangle is increased by 40% and its breadth is decreased by 40%, what will be the percentage change in its perimeter?",
-"A fruit seller buys some oranges at the rate of ₹ 5 per orange. He also buys an equal number of bananas at the rate of ₹ 2 per banana. He makes a profit of 20% on oranges and a profit of 15% on bananas. In the end, he sold all the fruits. If he earned a profit of ₹ 390, find the number of oranges.",
-"A steamer goes downstream from one point to another in 7 hours. It covers the same distance upstream in 8 hours. If the speed of stream be 2 km/h, find the speed of the steamer in still water and the distance between the ports.",
-"Let O, P and Z represent the numbers 0, 3 and -5 respectively on the number line. Points Q, R and S are between O and P such that OQ = QR = RS = SP. What are the rational numbers represented by the points Q, R and S. Next choose a point T between Z and 0 so that ZT = TO. Which rational number does T represent?",
-"Rajni had a certain amount of money in her purse. She spent ₹ 10 1/4 in the school canteen, bought a gift worth ₹ 25 3/4 and gave ₹ 16 1/2 to her friend. How much she have to begin with?",
-"One-third of a group of people are men. If the number of women is 200 more than the men, find the total number of people",
-"Find the square roots of the following decimal numbers (i) 1056.25 (ii) 10020.01"
-],
+        { text: "Draw and label a plant cell.", marks: 5 },
+        { text: "Describe various agricultural practices.", marks: 5 },
+        { text: "Explain contact and non-contact forces with examples.", marks: 5 },
+        { text: "List any four application-based uses of pressure in real life.", marks: 5 },
+      ],
 
+      Maths: [
+        { text: "What is a rational number? Give two examples.", marks: 1 },
+        { text: "What is the cube of 2?", marks: 1 },
+        { text: "State a property of rational numbers.", marks: 1 },
+        { text: "What is the square of 12?", marks: 1 },
+        { text: "Compare -2/3 and -5/6.", marks: 1 },
+        { text: "What is an equation?", marks: 1 },
+        { text: "Define perfect square.", marks: 1 },
+        { text: "Give one cube number between 1 and 100.", marks: 1 },
+        { text: "What is the unit digit of cube of 3?", marks: 1 },
+        { text: "Name a number whose square is 121.", marks: 1 },
 
-      SST: [
-       "Sorry For Inconvince, no questions added still"
-      
+        { text: "Solve: 2x + 3 = 15", marks: 2 },
+        { text: "If 3x - 7 = 2, find x.", marks: 2 },
+        { text: "Simplify: (-2/3) + (4/5) - (1/2)", marks: 2 },
+        { text: "State two properties of rational numbers.", marks: 2 },
+        { text: "Find cube root of 216.", marks: 2 },
+        { text: "Explain why 0.75 is rational.", marks: 2 },
+        { text: "Form a linear equation: 'Twice a number is 10'", marks: 2 },
+        { text: "Solve: 5(x − 3) = 3x + 1", marks: 2 },
+        { text: "What is the difference between expression and equation?", marks: 2 },
+        { text: "Find smallest number to multiply 72 to make it a cube.", marks: 2 },
+
+        { text: "Solve a word problem: The sum of a two-digit number and the number formed by reversing its digits is 121. If its unit digit is 5, find the number.", marks: 5 },
+        { text: "Explain square root by division method with example", marks: 5 },
+        { text: "List and explain properties of rational numbers.", marks: 5 },
+        { text: "Find all cube numbers between 1 and 1000 and explain pattern.", marks: 5 }
       ]
     };
 
-    function displayQuiz(maxQuestions) {
+    function generatePaper() {
       const subject = document.getElementById("subject").value;
       const quizDiv = document.getElementById("quiz");
       quizDiv.innerHTML = "";
 
       const questions = [...questionBank[subject]];
-      const shuffled = questions.sort(() => 0.5 - Math.random());
+      const shuffle = arr => arr.sort(() => 0.5 - Math.random());
 
-      for (let i = 0; i < maxQuestions && i < shuffled.length; i++) {
-        const questionDiv = document.createElement("div");
-        questionDiv.innerHTML = `<strong>Q${i + 1}:</strong> ${shuffled[i]}`;
-        quizDiv.appendChild(questionDiv);
-      }
+      const sectionA = shuffle(questions.filter(q => q.marks === 1)).slice(0, 10); // 10 marks
+      const sectionB = shuffle(questions.filter(q => q.marks === 2)).slice(0, 10); // 20 marks
+      const sectionC = shuffle(questions.filter(q => q.marks === 5)).slice(0, 2);  // 10 marks
+
+      const renderSection = (title, questions) => {
+        const section = document.createElement("div");
+        section.innerHTML = `<h2>${title}</h2>`;
+        questions.forEach((q, i) => {
+          const qDiv = document.createElement("div");
+          qDiv.innerHTML = `<strong>Q:</strong> (${q.marks}M) ${q.text}`;
+          section.appendChild(qDiv);
+        });
+        quizDiv.appendChild(section);
+      };
+
+      renderSection("Section A – 1 Mark Questions", sectionA);
+      renderSection("Section B – 2 Mark Questions", sectionB);
+      renderSection("Section C – 5 Mark Questions", sectionC);
     }
   </script>
 
 </body>
 </html>
+  
 
